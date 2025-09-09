@@ -1,0 +1,136 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="name">
+    <input type="number" id="DOB">
+    <script>
+      //     let input = prompt("Enter a name : ");
+      //     function name() {
+      //     let capitalized =
+      //       input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+      //     alert(capitalized);
+      //   }
+      //   name();
+      // function wlcMsg(){
+
+      // }
+
+      //   let name = prompt("Enter name");
+      //   let letter = name.charAt(0);
+      //   let newLetter = letter.toUpperCase ();
+      //   let str = name.slice(1, name.length);
+      //   let newName = newLetter +str;
+
+      //   alert(newName);
+
+    //   let input = prompt("Enter name");
+    //   function name() {
+    //     let letter = name.charAt(0);
+    //     let newLetter = letter.toUpperCase();
+    //     let str = name.slice(1, name.length);
+    //     let newName = newLetter + str;
+    //   }
+    //   let y = prompt("Enter DOB");
+    //   const date = new Date();
+      
+    //   let output = "Hello" + newName + "<br>"
+
+
+
+      let input = prompt("Enter your name");
+ 
+      let name = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+ 
+      let dobInput = prompt("Enter your Date of Birth (yyyy/mm/dd):");
+      let dob = new Date(dobInput);
+      let today = new Date();
+      let age = today.getFullYear() - dob.getFullYear();
+      let monthDiff = today.getMonth() - dob.getMonth();
+      let dayDiff = today.getDate() - dob.getDate();
+      let userId = Math.floor(10000 + Math.random() * 90000); // Always 5-digit
+ 
+      alert(
+        "Hello " +
+          name +
+          ", you are " +
+          age +
+          " years old and your user ID is " +
+          userId +
+          "."
+      );
+
+    
+    </script>
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Info</title>
+  </head>
+  <body>
+    <label for="name">Enter Name:</label>
+    <input type="text" id="name"/>
+    <br>
+    <br>
+    <label for="dob">Enter DOB:</label>
+    <input type="date" id="dob" />
+    <br>
+    <br>
+    <button onclick="showInfo()">Submit</button>
+
+    <script>
+      function showInfo() {
+        let input = document.getElementById("name").value;
+        let yourName = get.trimEnd();
+        let dobInput = document.getElementById("dob").value;
+
+        // Check for empty inputs
+        if (!input || !dobInput) {
+          alert("Please enter both name and date of birth.");
+          return;
+        }
+
+        // Capitalize name
+        let name = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+
+        // Calculate age
+        let dob = new Date(dobInput);
+        let today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        let monthDiff = today.getMonth() - dob.getMonth();
+        let dayDiff = today.getDate() - dob.getDate();
+
+        // Adjust age if birthday hasn't occurred yet this year
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+          age--;
+        }
+
+        // Generate random 5-digit user ID
+        let userId = Math.floor(10000 + Math.random() * 90000);
+
+        // Show output
+        alert(
+          "Hello " +
+            name +
+            ", you are " +
+            age +
+            " years old and your user ID is " +
+            userId +
+            "."
+        );
+      }
+    </script>
+  </body>
+</html>
+

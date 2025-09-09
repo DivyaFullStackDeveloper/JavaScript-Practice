@@ -1,0 +1,378 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getDay()">Check</button>
+    <script>
+      // let date = new Date("2025-08-03")
+
+      //--------- show day
+      // let day = date.getDay();
+
+      // -----show day by control state
+      // if(day==0){
+      //     alert("Today is Sunday")
+      // }else if(day == 1){
+      //       alert("Today is Monday")
+      // }else if(day == 2){
+      //       alert("Today is Tuesday")
+      // }else if(day == 3){
+      //       alert("Today is Wednesday")
+      // }else if(day == 4){
+      //       alert("Today is Thusday")
+      // }else if(day == 5){
+      //       alert("Today is Friday")
+      // }else{
+      //       alert("Today is Saturday")
+      // }
+      //    ------------ show day by array
+      // let date = new Date("2025-08-03")
+      // let day = date.getDay();
+      // let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saturday"]
+      // let result = days [0];
+      // alert(result);
+
+      // ----------- show year
+      // let date = new Date("2025-08-03")
+      // let day = date.getDay();
+      // let year = date.getFullYear()
+      // alert(year);
+
+      // --------
+      // let date = new Date("2025-08-03")
+      // let day = date.getDay();
+      //     if(day==0){
+      //     alert("Today is Weekend")
+      // }else if(day == 1){
+      //       alert("Today is Weekday")
+      // }else if(day == 2){
+      //       alert("Today is Weekday")
+      // }else if(day == 3){
+      //       alert("Today is Weekday")
+      // }else if(day == 4){
+      //       alert("Today is Weekday")
+      // }else if(day == 5){
+      //       alert("Today is Weekday")
+      // }else{
+      //       alert("Today is Weekday")
+      // }
+
+      // -------show month, year, date day
+      function getDay() {
+        // date
+        let date = new Date("2025-08-03");
+
+        // day
+        let day = date.getDay();
+        let days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thusday",
+          "Friday",
+          "Saturday",
+        ];
+        let result = days[2];
+
+        //    month
+        let month = date.getMonth("2025-08-03");
+
+        //  show year
+
+        let year = date.getFullYear();
+      }
+
+      let show =
+        "Date is " +
+        dayOfMonth +
+        "\n" +
+        "Day is " +
+        dayName +
+        "\n" +
+        "Month is " +
+        monthName +
+        "\n" +
+        "Year is " +
+        year;
+    </script>
+  </body>  
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Info</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container{
+        width: 40%;
+        height: 60%;
+        background-color: lightblue;
+        border-radius: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Check Time</h1>
+      <button onclick="startChecking()">Check</button>
+    </div>
+    <script>
+      function getDay() {
+        //  date
+        let date = new Date("2025-08-03");
+
+        //  day
+        let day = date.getDay();
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let getDay = days[day];
+
+        //   month
+        let month = date.getMonth();
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let monthName = months[month];
+
+        //   date   year
+        let dayOfMonth = date.getDate();
+        let year = date.getFullYear();
+
+        let message = "Date is " + dayOfMonth + "\n" +
+                      "Day is " + getDay + "\n" +
+                      "Month is " + monthName + "\n" +
+                      "Year is " + year;
+
+        alert(message);
+        console.log(message);
+        document.getElementById("display")
+      }
+
+      //----------------- change second automaticaly
+       function startChecking() {
+            setInterval(checkTime, 100);  
+          }
+          function checkTime(){
+
+          const date = new Date();
+
+          const ms = date.getTime();
+          const second = Math.floor(ms / 1000);
+          const minute = Math.floor(ms / 60000);
+          const hour = Math.floor(ms / 3600000);
+
+          alert(
+              "Time is:" + date + "\n" +
+                          "Milliseconds is :" + ms + "\n" +
+                          "Second is :" + second + "\n" +
+                          "Minute is :" + minute +"\n"+
+                          "Hour is :" + hour
+
+          );
+          console.log(
+              "Time is:" + date + "\n" +
+                          "Milliseconds is :" + ms + "\n" +
+                          "Second is :" + second + "\n" +
+                          "Minute is :" + minute +"\n"+
+                          "Hour is :" + hour
+
+          );
+      }
+
+      // ------------ date increase after 5 days
+      const date = new Date();
+      date.setDate(date.getDate() + 5);
+      alert(date);
+      document.getElementById("display").innerHTML;
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Info</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Check Time</h1>
+      <button onclick="getDay()">Show Date Info</button>
+      <button onclick="startChecking()">Check Time</button>
+    </div>
+
+    <p id="display"></p>
+
+    <script>
+      // ----------- show month, year, date, day --------------
+      function getDay() {
+        let date = new Date("2025-08-03");
+
+        // Day name from index
+        let day = date.getDay();
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let dayName = days[day];
+
+        // Month name from index
+        let month = date.getMonth();
+        let months = [
+          "January", "February", "March", "April", "May", "June", 
+          "July", "August", "September", "October", "November", "December"
+        ];
+        let monthName = months[month];
+
+        // Date and year
+        let dayOfMonth = date.getDate();
+        let year = date.getFullYear();
+
+        let show =
+          "Date is: " + dayOfMonth + "<br>" +
+          "Day is: " + dayName + "<br>" +
+          "Month is: " + monthName + "<br>" +
+          "Year is: " + year;
+
+        document.getElementById("display").innerHTML = show;
+      }
+
+      // ------------- show changing second, ms, minute, hour ------------
+      function startChecking() {
+        setInterval(checkTime, 1000); // every 1 second
+      }
+
+      function checkTime() {
+        const date = new Date();
+
+        const ms = date.getTime();
+        const second = Math.floor(ms / 1000);
+        const minute = Math.floor(ms / 60000);
+        const hour = Math.floor(ms / 3600000);
+
+        let message =
+          "Time is: " + date + "<br>" +
+          "Milliseconds is: " + ms + "<br>" +
+          "Second is: " + second + "<br>" +
+          "Minute is: " + minute + "<br>" +
+          "Hour is: " + hour;
+
+        document.getElementById("display").innerHTML = message;
+      }
+
+      // ------------ date increase after 5 days -------------
+      const futureDate = new Date();
+      futureDate.setDate(futureDate.getDate() + 5);
+      console.log("After 5 Days: " + futureDate);
+    </script>
+  </body>
+</html>
+
+  -->
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Date Info</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+    .container {
+      width: 40%;
+      padding: 20px;
+      background-color: lightblue;
+      border-radius: 20px;
+      text-align: center;
+    }
+    #display {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Check Time</h1>
+    <button onclick="getDay()">Show Date Info</button>
+    <button onclick="startChecking()">Show Time</button>
+    <p id="display"></p>
+  </div>
+
+  <script>
+    // Show complete date info for a specific date
+    function getDay() {
+      let date = new Date("2025-08-03");
+
+      let day = date.getDay();
+      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      let getDay = days[day];
+
+      let month = date.getMonth();
+      let months = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"];
+      let monthName = months[month];
+
+      let dayOfMonth = date.getDate();
+      let year = date.getFullYear();
+
+      let message = "Date is: " + dayOfMonth + "<br>" +
+                    "Day is: " + getDay + "<br>" +
+                    "Month is: " + monthName + "<br>" +
+                    "Year is: " + year;
+
+      document.getElementById("display").innerHTML = message;
+    }
+
+    // Start checking time every 100ms (note: it will keep opening alerts rapidly!)
+    function startChecking() {
+      setInterval(checkTime, 100);  
+    }
+
+    function checkTime() {
+      const date = new Date();
+
+      const ms = date.getTime();
+      const second = Math.floor(ms / 1000);
+      const minute = Math.floor(ms / 60000);
+      const hour = Math.floor(ms / 3600000);
+
+      let message = "Time is: " + date + "<br>" +
+                    "Milliseconds: " + ms + "<br>" +
+                    "Seconds: " + second + "<br>" +
+                    "Minutes: " + minute + "<br>" +
+                    "Hours: " + hour;
+
+      document.getElementById("display").innerHTML = message;
+    }
+
+    // Add 5 days to current date
+    const futureDate = new Date();
+    futureDate.setDate(futureDate.getDate() + 5);
+    console.log("Date after 5 days:", futureDate);
+  </script>
+</body>
+</html>

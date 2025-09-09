@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+         StudentData = [];
+
+         let name = prompt("enter name:");
+         let rollNo = prompt("enter rollno:");
+
+         StudentData.push({
+            namr: name,
+            rollNo: rollNo
+         });
+
+         console.log(StudentData);
+
+    </script> -->
+
+   <!-- <script>
+        const array = [ 1,2,3,4,5,6,7,]
+        const num = 10
+        let newArray= []
+        for (let i of array){
+            for (let x = 0; X <= array.length-1; x++){
+                if((array[i] + array[x+1])== num) && array [i] == array(x + 7)
+                newArray.push({num1:array[i],
+            num2:array[x+1]
+        })
+            }
+            console.log(newArray);
+        }
+    </script>   -->
+
+    <script>
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const num = 8;
+    let newArray = [];
+
+    for (let i = 0; i < array.length; i++) {
+        for (let x = i + 1; x < array.length; x++) {
+            if (array[i] + array[x] === num) {
+                newArray.push({
+                    num1: array[i],
+                    num2: array[x]
+                });
+            }
+        }
+    }
+
+    console.log(newArray);
+</script>
+
+<!-- <script>
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const num = 8;
+    let newArray = [];
+
+    for (let i = 0; i < array.length; i++) {
+        for (let x = i + 1; x < array.length; x++) {
+            if (array[i] + array[x] === num && array[i] !== array[x]) {
+                newArray.push({
+                    num1: array[i],
+                    num2: array[x]
+                });
+            }
+        }
+    }
+
+    console.log(newArray);
+</script> -->
+
+</body>
+</html>

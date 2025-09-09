@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Boolean</title>
+</head>
+<body>
+    <div id="display"></div>
+    <input type="text" id="input-one">
+    <button onclick="clicktest()">Check</button>
+
+    <script>
+        function checkboolean(input) {
+            if (input == true || input == "true") {
+                return "yes";
+            } else if (input == false || input == "false") {
+                return "no";
+            } else {
+                return "null";
+            }
+        }
+        function clicktest() {
+            let a = document.getElementById("input-one").value;
+            let result = checkboolean(a);
+            document.getElementById("display").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

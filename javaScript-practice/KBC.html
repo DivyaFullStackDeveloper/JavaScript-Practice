@@ -1,0 +1,329 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBC Quiz Game</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url(https://pbs.twimg.com/ext_tw_video_thumb/1430113963283410944/pu/img/HJZ5Cp97N6wkNQsL.jpg:large);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        width: 40%;
+        padding: 20px;
+        background-color: rgba(173, 216, 230, 0.439);
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 14px rgba(0, 0, 0, 0.071);
+      }
+
+      #display {
+        margin-top: 15px;
+        font-size:30px;
+        color: rgb(17, 212, 233);
+      }
+      #question{
+        font-size: 25px;
+        font-weight: 50px;
+        color: white;
+        margin-bottom: 20px;
+      }
+      #options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 6px;  
+      }
+
+      .option-btn {
+        width: 48%; /* Two buttons per row with small gap */
+        margin: 2px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      #nextBtn {
+        margin-top: 15px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        background-color: rgb(0, 0, 233);
+        color: white;
+      }
+      .correct {
+        background-color: rgb(42, 188, 42);
+      }
+
+      .wrong {
+        background-color: rgb(234, 70, 70);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>KBC Quiz Game</h1>
+      <div id="question">Click Start to begin!</div>
+      <div id="options"></div>
+      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+      <div id="display"></div>
+    </div>
+
+    <script>
+      let questionNumber = 1;
+      let score = 0;
+
+      // Show first question
+      showQuestion();
+
+      function showQuestion() {
+        document.getElementById("display").innerHTML = "";
+        document.getElementById("nextBtn").style.display = "none";
+
+        const optionsDiv = document.getElementById("options");
+        optionsDiv.innerHTML = "";
+
+        if (questionNumber === 1) {
+          document.getElementById("question").innerText =
+            "Q1: What is the capital of India?";
+          addOption("Mumbai", false);
+          addOption("Delhi", true);
+          addOption("Kolkata", false);
+          addOption("Chennai", false);
+        } else if (questionNumber === 2) {
+          document.getElementById("question").innerText =
+            "Q2: Who is the father of Computer?";
+          addOption("Charles Babbage", true);
+          addOption("Bill Gates", false);
+          addOption("Steve Jobs", false);
+          addOption("Dennis Ritchie", false);
+        } else if (questionNumber === 3) {
+          document.getElementById("question").innerText =
+            "Q3: HTML stands for?";
+          addOption("HyperText Machine Language", false);
+          addOption("HighText Marking Language", false);
+          addOption("HyperText Markup Language", true);
+          addOption("None of these", false);
+        } else {
+          document.getElementById("question").innerText = "Game Over!";
+          document.getElementById("display").innerText =
+            "You scored " + score + " out of 3.";
+          document.getElementById("options").innerHTML = "";
+          document.getElementById("nextBtn").style.display = "none";
+        }
+      }
+
+      function addOption(text, isCorrect) {
+        const btn = document.createElement("button");
+        btn.innerText = text;
+        btn.className = "option-btn";
+        btn.onclick = function () {
+          checkAnswer(btn, isCorrect);
+        };
+        document.getElementById("options").appendChild(btn);
+      }
+
+      function checkAnswer(button, isCorrect) {
+        const allBtns = document.getElementsByClassName("option-btn");
+
+        for (let btn of allBtns) {
+          btn.disabled = true;
+        }
+
+        if (isCorrect) {
+          button.classList.add("correct");
+          document.getElementById("display").innerText = "Correct!";
+          score++;
+        } else {
+          button.classList.add("wrong");
+          document.getElementById("display").innerText = " Incorrect";
+        }
+
+        document.getElementById("nextBtn").style.display = "inline-block";
+      }
+
+      function nextQuestion() {
+        questionNumber++;
+        showQuestion();
+      }
+    </script>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KBC Quiz Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url(https://pbs.twimg.com/ext_tw_video_thumb/1430113963283410944/pu/img/HJZ5Cp97N6wkNQsL.jpg:large);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 40%;
+      padding: 20px;
+      background-color: rgba(173, 216, 230, 0.439);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 14px rgba(0, 0, 0, 0.071);
+    }
+
+    #display {
+      margin-top: 15px;
+      font-size: 30px;
+      color: rgb(17, 212, 233);
+    }
+    #question {
+      font-size: 25px;
+      font-weight: 50px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    #options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 6px;
+    }
+
+    .option-btn {
+      width: 48%;
+      margin: 2px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    #nextBtn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: rgb(0, 0, 233);
+      color: white;
+    }
+
+    .correct {
+      background-color: rgb(42, 188, 42);
+    }
+
+    .wrong {
+      background-color: rgb(234, 70, 70);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>KBC Quiz Game</h1>
+    <div id="question">Click Start to begin!</div>
+    <div id="options"></div>
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    <div id="display"></div>
+  </div>
+
+  <script>
+    let questionIndex = 0;
+    let score = 0;
+
+    // Questions in array with options and correct answer
+    const questions = [
+      {
+        ques: "Q1: What is the capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        correct: 1
+      },
+      {
+        ques: "Q2: Who is the father of Computer?",
+        options: ["Charles Babbage", "Bill Gates", "Steve Jobs", "Dennis Ritchie"],
+        correct: 0
+      },
+      {
+        ques: "Q3: HTML stands for?",
+        options: ["HyperText Machine Language", "HighText Marking Language", "HyperText Markup Language", "None of these"],
+        correct: 2
+      }
+    ];
+
+    showQuestion();
+
+    function showQuestion() {
+      document.getElementById("display").innerHTML = "";
+      document.getElementById("nextBtn").style.display = "none";
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+
+      if (questionIndex < questions.length) {
+        const currentQ = questions[questionIndex];
+        document.getElementById("question").innerText = currentQ.ques;
+
+        for (let i = 0; i < currentQ.options.length; i++) {
+          const btn = document.createElement("button");
+          btn.innerText = currentQ.options[i];
+          btn.className = "option-btn";
+          btn.onclick = function () {
+            checkAnswer(btn, i === currentQ.correct);
+          };
+          optionsDiv.appendChild(btn);
+        }
+      } else {
+        document.getElementById("question").innerText = "Game Over!";
+        document.getElementById("options").innerHTML = "";
+        document.getElementById("display").innerText =
+          "You scored " + score + " out of " + questions.length + ".";
+      }
+    }
+
+    function checkAnswer(button, isCorrect) {
+      const allBtns = document.getElementsByClassName("option-btn");
+
+      for (let btn of allBtns) {
+        btn.disabled = true;
+      }
+
+      if (isCorrect) {
+        button.classList.add("correct");
+        document.getElementById("display").innerText = "Correct!";
+        score++;
+      } else {
+        button.classList.add("wrong");
+        document.getElementById("display").innerText = "Incorrect";
+      }
+
+      document.getElementById("nextBtn").style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+      questionIndex++;
+      showQuestion();
+    }
+  </script>
+</body>
+</html>
+

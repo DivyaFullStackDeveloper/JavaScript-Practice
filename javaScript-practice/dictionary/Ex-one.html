@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let array =[
+            {   question: "2+2=?",
+                option_One: 2,
+                option_two: 4,
+                ans: 4
+            },
+            {
+               question: "4+4=?",
+                option_One: 8,
+                option_two: 16,
+                ans: 8
+            }
+        ];
+
+        for (let i of array){
+            let userAns = prompt(i.que +"\n"
+                +"1. " + i.op1 +"\n"
+                + "2. " + i.op2 +"\n"
+            );
+
+            if(userAns == i.ans){
+                alert("Right Answer");
+                console.log("correct");
+            }else{
+                alert("wrong Answer");
+                console.log("incorect");
+            }
+
+        }
+
+
+
+
+    //      for (let i = 0; i < Array.length; i++) {
+    //         console.log(Array[0].question);
+    //      }
+    //  Array[0].question;
+
+ 
+    </script>
+</body>
+</html>

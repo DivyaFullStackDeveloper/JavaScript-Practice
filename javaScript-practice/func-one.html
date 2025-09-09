@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 80px;
+            height: 19px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="display"></h1>
+    <input type="text" id="enterValue" placeholder="enter number">
+    <button onclick="submit()">Submit</button>
+    <script>
+  
+
+//   string length
+
+//     function submit(){
+//       const one = document.getElementById("enterValue").value;
+//       const strlength = one.length;
+
+//       if(one == ""){
+//         alert("Please enter the valu")
+//       }else{
+//       document.getElementById("display").innerHTML =  strlength;
+//     }
+// }
+
+// upper case
+    function submit(){
+      const one = document.getElementById("enterValue").value;
+      const strlength = one.toUpperCase();
+     if(one == strlength){
+        alert("Enter lower case")
+     }else{}
+
+      if(one == ""){
+        alert("Please enter the valu")
+      }else{
+      document.getElementById("display").innerHTML =  strlength;
+    }
+}
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="number">
+    <input type="number" id="input">
+    <button onclick="printTable()">Check</button>
+    <script>
+      // while loop
+      // let x = 1;
+      //  while(x <= 10){
+      //     console.log(x);
+      //     x++;
+      //  }
+
+      // for loop
+      // for(let x = 1; x <= 10; x++){
+      //     console.log(x);
+      // }
+
+      // print 10 to 1
+      // for(let x = 10; x >= 1; x--){
+      //     console.log(x);
+      // }
+
+      // print table
+    //   for(let x = 5; x >= 50; x++){
+    //       console.log(x * 5);
+    //   }
+      // ---------------
+      // let i = 5;
+      // while(i <= 55){
+      //     console.log(i-5);
+      //     i = i+5
+      // }
+
+      // ----------------
+      // let x = 10;
+      // while(x < 20){
+      //     console.log((x -9 ) *5);
+      //     x++;
+      // }
+      // -------
+      // function tableFive(n){
+      //     console.log(n*5);
+      //     if(n <= 10){
+      //         tableFive(n+1);
+      //     }
+      // }
+      //   tableFive(10);
+      // ----------------
+    //   function tableFive(n) {
+    //     if (n < 1) return;
+    //     console.log(n * 5);
+    //     tableFive(n - 1);
+    //   }
+
+    //   tableFive(10);
+
+// ------------------
+function printTable(){
+let y = document.getElementById("input").value;
+let x = document.getElementById("number").value;
+for(let i = 1; i <= y; i++){
+    console.log(x * i);
+}
+};
+
+    </script>
+  </body>
+</html>

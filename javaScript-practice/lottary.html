@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         .main-container{
+           width: 40%;
+           height: 60%;
+           background-color: lightblue;
+           border-radius: 15px;
+           box-shadow: 0 0 14px rgba(58, 58, 58, 0.263);
+         }
+         input{
+            height: 10%;
+         }
+         button{
+            height: 9%;
+            border-radius: 10px;
+         }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+    <h1>Lottery Game</h1>
+    <div id="display"></div>
+    <input type="number" id="number" placeholder="Enter lottary number">
+    <input type="number" id="number" placeholder="Enter lottary number">
+    <input type="number" id="number" placeholder="Enter lottary number"><br>
+    <br/>
+    <button onclick="getLottary()">Check Lottary</button>
+    <button>Check Lottary</button>
+    <button>Check Lottary</button>
+    </div>
+    <script>
+     function getLottary(a,b,c){
+     let number = Math.random()*10;
+     let newNumber = Math.floor(number + 1);
+     const showresult = document.getElementById("display").innerHTML;
+     return;
+        }
+
+ 
+    </script>
+</body>
+</html>
+
+ 
+  </style>
+</head>
+<body>
+ 
+
+  <script>
+    function playLottery() {
+      const userNum = parseInt(document.getElementById("luckyNumber").value);
+      const randomNum = Math.floor(Math.random() * 10) + 1;
+
+      const resultDiv = document.getElementById("result");
+
+      if (isNaN(userNum) || userNum < 1 || userNum > 10) {
+        resultDiv.innerHTML = "❗ Please enter a valid number between 1 and 10.";
+        resultDiv.className = "lose";
+        return;
+      }
+
+      if (userNum === randomNum) {
+        resultDiv.innerHTML = `🎉 You Win! The number was ${randomNum}.`;
+        resultDiv.className = "win";
+      } else {
+        resultDiv.innerHTML = `😢 You Lose! The number was ${randomNum}.`;
+        resultDiv.className = "lose";
+      }
+    }
+  </script>
+
+</body>
+</html>

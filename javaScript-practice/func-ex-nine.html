@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getName(name){
+            let inputName = name;
+            let letter = name.charAt(0)
+            let newLetter = letter.toUpperCase()
+            
+            }
+       
+        function getFullName(){
+        fullName = "divya ramdas bondre";
+
+        let newFullName = fullName.split(" ");
+
+        let firstName = getName(newFullName)[0]
+        let middName = getName(newFullName)[1]
+        let lastName = getName(newFullName)[2]
+
+        alert(
+            "First name: " + firstName + "\n"+
+            "Midd name: " +middName + "\n"+
+            "Last name: " +lastName 
+        );
+        }
+    </script>
+</body>
+</html> 
+  

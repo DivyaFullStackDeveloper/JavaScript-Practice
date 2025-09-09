@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 30%;
+            height: 80%;
+            background-color: slategray;
+        }
+        .main{
+          width: 80%;
+          height: 1000%;
+   background: linear-gradient(135deg, #F4B010, #FF512F);
+
+
+
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="display"></div>
+      <input type="number" id="input" placeholder="enter a number" />
+      <button onclick="number()">Submit</button>
+      <button onclick="checkAge()">Check Age</button>
+      <button onclick="checkYear()">Check Year</button>
+      <button onclick="checkUser()">Check User Name</button>
+      <button onclick="checkNumber()">Check</button>
+      <button onclick="clicktest()">Check</button>
+      <button onclick="CheckName()">Check</button>
+    </div>
+    <input class="main">
+    <script>
+      // Question 1
+      function number() {
+        let one = document.getElementById("input").value;
+        if (one > 0) {
+          document.getElementById("display").innerHTML = "Number is Positive";
+        } else if (one < 0) {
+          document.getElementById("display").innerHTML = "Number is Negative";
+        } else {
+          document.getElementById("display").innerHTML = "Number is Zero";
+        }
+      }
+
+      //   Question 2
+      function checkAge() {
+        let age = document.getElementById("input").value;
+        if (age > 13 || age < 19) {
+          document.getElementById("display").innerHTML = "high school student";
+        }
+      }
+
+      // Question 3
+      function checkYear() {
+        let year = document.getElementById("input").value;
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+          document.getElementById("display").innerHTML = "This is leep year";
+        } else {
+          document.getElementById("display").innerHTML =
+            "This is not leep year";
+        }
+      }
+
+      // Question 4
+      function checkUser() {
+        let user = document.getElementById("input").value;
+
+        if (user == "admin" || user == "superuser") {
+          document.getElementById("display").innerHTML = "Authenticate";
+        } else {
+          document.getElementById("display").innerHTML = "Not Authenticate";
+        }
+      }
+
+      // Question 5
+      function checkNumber() {
+        let num = document.getElementById("input").value;
+
+        if (num > 0 && num % 2 == 0) {
+          document.getElementById("display").innerHTML =
+            "Number is Positive and Even";
+        } else if (num > 0 && num % 2 != 0) {
+          document.getElementById("display").innerHTML =
+            "Number is Positive and Odd";
+        } else if (num == 0) {
+          document.getElementById("display").innerHTML = "Number is zero";
+        } else if (num < 0 && num % 2 == 0) {
+          document.getElementById("display").innerHTML =
+            "Number is Negative and Even";
+        } else {
+          document.getElementById("display").innerHTML =
+            "Number is Negative and Odd";
+        }
+      }
+      // Question 6
+      function checkboolean(input) {
+        if (input == true || input == "true") {
+          return "yes";
+        } else if (input == false || input == "false") {
+          return "no";
+        } else {
+          return "null";
+        }
+      }
+      function clicktest() {
+        let a = document.getElementById("input").value;
+        let result = checkboolean(a);
+        document.getElementById("display").innerHTML = result;
+      }
+
+      // Question 7
+      function CheckName() {
+        let name = document.getElementById("input").value;
+        let user = name.toUpperCase();
+
+        if (name == "JONY") {
+          document.getElementById("display").innerHTML = "input is JONY";
+        } else {
+          document.getElementById("display").innerHTML = "input is invalid";
+        }
+      }
+    </script>
+  </body>
+</html>

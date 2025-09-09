@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+ <button onclick="add()">Click me</button>
+  <script>
+    // let num = 246;
+    // let str = num.toString();
+    // let x = Number(str.slice(0,1));
+    // let y = Number(str.slice(1,2));
+    // let z = Number(str.slice(2,3));
+ 
+    // let sum = (x*x*x) + (y*y*y) + (z*z*z);
+ 
+    // if(sum == num){
+    //     console.log(num + " is an Armstrong number");
+    // } else {
+    //     console.log(num + " is NOT an Armstrong number");
+    // }
+
+
+    // -------------------------
+    // let array = [2,4,3,6,7,10];
+
+    // let evenCount = 0
+    // function evenCount(num){
+    //     if(num% 2 ==0){
+    //         evenCount ++;
+    //     }
+    // }
+    // function add(){
+    //     let n1 = prompt();
+    //     return n1 + 2
+    // }
+    // function message(){
+    //     return"number add"
+    // }
+
+    // function data(){
+    //     let i = array[x];
+    //     evenCount(i);
+    //     let n1 = add();
+    //     array.push(n1)
+    //     alert(message())
+    //     x++
+    // }
+
+    // ----------------------
+    // array = []
+    // function addValue(){
+    //     for(let i =1; i <= 5; i++){
+    //         let input = prompt()
+    //         array[array.length] = input
+
+             
+    //     }
+    //     console.log(array);
+    // }
+
+    let studentData = []
+     
+    let studentName = prompt("Enter student name");
+    let studentAge = prompt("enter student age");
+
+    let skillArray = []
+    let  y = 0;
+    
+    studentData.push({
+        name:studentName,
+        age:studentAge,
+        skills: skillArray
+    })
+    alert(studentData)
+    console.log(studentData); 
+</script>
+</body>
+ 
+</html>

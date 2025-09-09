@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="question"></h1>
+    <input type="radio" name="option" id="option-1" value="2">
+    <label for="option-1" id="op1"></label>
+    <input type="radio" name="option" id="option-2" value="4">
+    <label for="option-2" id="op2"></label>
+    <br/>
+    <input type="submit" onclick="getValue()">
+    <button onclick="getQue()">GetQue</button>
+    <script>
+     let array =[
+            {   question: "2+2=?",
+                op1: 2,
+                op2: 4,
+                ans: 4,
+            },
+            {
+               question: "4+4=?",
+                op1: 8,
+                op2: 16,
+                ans: 8,
+            },
+        ];
+let i = 0
+for(let i of array){
+    document.getElementById("question").innerHTML = i.question;
+    document.getElementById("op1").innerHTML = i.op1;
+    document.getElementById("op2").innerHTML = i.op2;
+ }
+
+         function getValue(){
+     let op1 = (document.getElementById("option-1").checked);
+
+     let op2 = Number(document.getElementById("option-2").checked);
+     if(op1 == true){
+        alert("correct")
+     }else if(op2 == true){
+        alert("wrong")
+     }else{
+        alert("select option")
+     }
+    }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="question"></h1>
+    <input type="radio" name="option" id="option-1" value="1" />
+    <label for="option-1" id="op1"></label>
+    <input type="radio" name="option" id="option-2" value="2" />
+    <label for="option-2" id="op2"></label>
+    <br />
+    <input type="submit" onclick="getValue()" />
+    <button onclick="getQue()">GetQue</button>
+    <script>
+           let array = [
+             { question: "2+2=?",
+             op1: 2,
+             op2: 4,
+             ans: 2 },
+             {
+               question: "4+4=?",
+               op1: 8,
+               op2: 16,
+               ans: 1,
+             },
+           ];
+           let i = 0;
+           function getQue() {
+             document.getElementById("question").innerHTML = array[i].question;
+             document.getElementById("op1").innerHTML = array[i].op1;
+             document.getElementById("op2").innerHTML = array[i].op2;
+           }
+
+           function getValue() {
+             let op1 = document.getElementById("option-1");
+             let op2 = document.getElementById("option-2");
+
+             let ans = array[i].ans;
+
+             if (op1.checked) {
+               let selectOption = Number(op1.value);
+               if (selectOption == ans) {
+                 alert("right");
+             }
+             else {
+               alert("wrong");
+             }
+            }
+            else if(op2.checked){
+            let selectOption = Number(op2.value);
+               if (selectOption == ans) {
+                 alert("right");
+             }else{
+                alert("wrong")
+             }
+            }
+            else{
+                alert("select option");
+            }
+             i++;
+             getQue();
+           }
+    </script>
+  </body>
+</html>

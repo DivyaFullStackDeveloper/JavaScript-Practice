@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actors Movies</title>
+</head>
+<body>
+  <pre id="display"></pre>
+
+  <script src="./actors-data.js"></script>
+  <script>
+    for(let i = 0; i < newData.length; i++){
+        let data = newData[i];
+        let d = "";
+     for(let j of data.movies){
+        d = d + `<li>${j.Name} - ${j.ReleaseDate} - ${j.Reating}</li>`
+     }
+     document.getElementById("display").innerHTML += `<div>
+           <h1> ${data.name}</h1>  
+           <ul>
+            <li>${{d}}</li>
+           </ul>
+           </div>`;
+    }
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actors Movies</title>
+  </head>
+  <body>
+    <div id="display"></div>
+
+    <script src="./actors-data.js"></script>
+    <script>
+      for (let i = 0; i < newData.length; i++) {
+        let data = newData[i];
+        let d = "";
+
+        for (let j of data.movies) {
+          d += `<li>${j.Name} - ${j.ReleaseDate} - Rating: ${j.Reating}</li>`;
+        }
+        document.getElementById("display").innerHTML += `
+        <div>
+          <h1>${data.name}</h1>
+          <ul>${d}</ul>
+        </div>
+      `;
+      }
+    </script>
+  </body>
+</html>
